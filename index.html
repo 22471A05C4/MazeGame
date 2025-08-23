@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maze Game</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="controls">
-    <button id="startBtn">Start Game</button>
-    <select id="difficulty">
-      <option value="10">Easy</option>
-      <option value="15">Medium</option>
-      <option value="20">Hard</option>
-    </select>
-    <button id="solutionBtn">Show Solution</button>
-    <button id="hintBtn">Hint</button>
-    <button id="changeShapeBtn">Change Shape</button>
-    <button id="exitBtn">Exit</button>
-    <div id="timer">Time: 0s</div>
-    <div id="encourage"></div>
-  </div>
+  <div class="wrap">
+    <h1>🌀 Maze Game</h1>
 
-  <canvas id="mazeCanvas"></canvas>
+    <div class="controls">
+      <button id="startBtn">Start Game</button>
 
-  <!-- Mobile controls -->
-  <div class="mobile-controls">
-    <button class="arrow" data-dir="up">⬆️</button>
-    <div>
-      <button class="arrow" data-dir="left">⬅️</button>
-      <button class="arrow" data-dir="down">⬇️</button>
-      <button class="arrow" data-dir="right">➡️</button>
+      <label class="select-wrap">
+        <span>Level</span>
+        <select id="levelSelect">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+
+      <button id="solutionBtn">Show Solution</button>
+      <button id="hintBtn">Hint</button>
+      <button id="shapeBtn">Change Shape</button>
+      <button id="exitBtn">Exit</button>
+
+      <div id="timer">Time: 0s</div>
     </div>
+
+    <canvas id="mazeCanvas"></canvas>
+
+    <!-- On-screen (mobile) arrow controls -->
+    <div class="arrows">
+      <button class="arrow" data-dir="up" aria-label="Move Up">⬆</button>
+      <div class="row">
+        <button class="arrow" data-dir="left" aria-label="Move Left">⬅</button>
+        <button class="arrow" data-dir="down" aria-label="Move Down">⬇</button>
+        <button class="arrow" data-dir="right" aria-label="Move Right">➡</button>
+      </div>
+    </div>
+
+    <p id="statusMsg"></p>
   </div>
+
+  <div id="toast"></div>
 
   <script src="script.js"></script>
 </body>
