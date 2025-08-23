@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Maze Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>🎮 Maze Game</h1>
-    <canvas id="mazeCanvas" width="400" height="400"></canvas>
-
-    <div class="controls">
-      <button id="startBtn">Start Game</button>
-      <button id="hintBtn">Hint</button>
-      <button id="solutionBtn">Show Solution</button>
-    </div>
-
-    <p id="message"></p>
+  <div class="controls">
+    <button id="startBtn">Start Game</button>
+    <select id="difficulty">
+      <option value="10">Easy</option>
+      <option value="15">Medium</option>
+      <option value="20">Hard</option>
+    </select>
+    <button id="solutionBtn">Show Solution</button>
+    <button id="hintBtn">Hint</button>
+    <button id="changeShapeBtn">Change Shape</button>
+    <button id="exitBtn">Exit</button>
+    <div id="timer">Time: 0s</div>
+    <div id="encourage"></div>
   </div>
 
-  <!-- ✅ Script must be at the end -->
+  <canvas id="mazeCanvas"></canvas>
+
+  <!-- Mobile controls -->
+  <div class="mobile-controls">
+    <button class="arrow" data-dir="up">⬆️</button>
+    <div>
+      <button class="arrow" data-dir="left">⬅️</button>
+      <button class="arrow" data-dir="down">⬇️</button>
+      <button class="arrow" data-dir="right">➡️</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
